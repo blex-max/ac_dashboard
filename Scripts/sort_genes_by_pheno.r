@@ -1,6 +1,6 @@
 library(poppr)
 
-arab_anot <- read.delim("353annot.txt", header = FALSE)
+arab_anot <- read.delim("Data/353annot.txt", header = FALSE)
 arab_anot <- arab_anot[-1,c(1,5)]
 
 root <- arab_anot[grep("root", arab_anot$V5),1]
@@ -11,7 +11,7 @@ germ <- arab_anot[grep("seed|germ", arab_anot$V5),1]
 
 gene_cat <- \(gns) {
   
-  gals <- lapply(list.files(path = "./DNA", pattern = paste0(gns, collapse = "|"), full.names = T), read.genalex) # read in all relevant genalexs
+  gals <- lapply(list.files(path = "./Data/DNA", pattern = paste0(gns, collapse = "|"), full.names = T), read.genalex) # read in all relevant genalexs
   gals <- lapply(gals, \(x) x[which(!rownames(x@tab) %in% c('A71', 'A72', 'A77'))])
   
   gdfs <- lapply(gals, genind2df) # convert to dataframe

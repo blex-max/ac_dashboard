@@ -1,7 +1,7 @@
 #--------- get geninds
 suppressWarnings(
   suppressMessages(
-    source("scripts/sort_genes_by_pheno.r")))
+    source("Scripts/sort_genes_by_pheno.r")))
 
 
 #--------- Plotly
