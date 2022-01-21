@@ -134,6 +134,7 @@ ui <- fluidPage(theme = shinytheme('flatly'),
                                         
                                     )
                            ),
-                           tabPanel('Breeding Pair Selection')
+                           tabPanel('Breeding Pair Selection',
+                                    p('under construction!'))
                 )
 )
